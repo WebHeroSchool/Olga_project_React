@@ -3,6 +3,7 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
 
+const toDoItem = 'Сдать домашку с Props-ами';
 
 const App = () => (
   <div> <h1 style={{
@@ -10,8 +11,8 @@ const App = () => (
     }}>План покорения мира
   </h1>
   	<InputItem/>
-  	<ItemList />
-  	<Footer />
+  	<ItemList toDoItem={toDoItem} />
+  	<Footer count={3} />
   </div>
 );
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = () => (
+const ItemList = ({ toDoItem }) => (
   <ul>
-    <li> <Item /> </li>
-    <li> <Item /> </li>
-    <li> <Item /> </li>
+    <li> <Item toDoItem={toDoItem} /></li>
+    <li> <Item toDoItem={'Погулять с собакой'} /></li>
+    <li> <Item toDoItem={'Приготовить ужин'} /></li>
   </ul> 
 );
 
