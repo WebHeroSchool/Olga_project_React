@@ -3,17 +3,29 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
 
-const toDoItem = 'Сдать домашку с Props-ами';
+const App = () => {
+  const items = [
+    {
+      value: 'Сдать домашку с Props-ами'
+    },
+    {
+      value: 'Погулять с собакой'
+    },
+    {
+      value: 'Приготовить ужин'
+    }
+  ];
 
-const App = () => (
+  return(
   <div> <h1 style={{
     color: 'crimson'
     }}>План покорения мира
   </h1>
   	<InputItem/>
-  	<ItemList toDoItem={toDoItem} />
+  	<ItemList items={items} />
   	<Footer count={3} />
   </div>
-);
+  )
+};
 
 export default App;
