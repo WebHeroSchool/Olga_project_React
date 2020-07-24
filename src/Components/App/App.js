@@ -5,10 +5,11 @@ import InputItem from '../InputItem/InputItem';
 
 
 const App = () => (
-  <div> <h1 style={{
-    color: 'crimson'
+  <div> 
+    <h1 style={{
+      color: 'crimson'
     }}>План покорения мира
-  </h1>
+    </h1>
   	<InputItem/>
   	<ItemList />
   	<Footer />
