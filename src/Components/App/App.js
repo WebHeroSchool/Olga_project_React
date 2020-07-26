@@ -2,12 +2,12 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
-import './App.css';
+import styles from './App.module.css';
 
 const App = () => {
   const items = [
     {
-      value: 'Сдать домашку с Props-ами'
+      value: 'Пройти модуль React'
     },
     {
       value: 'Погулять с собакой'
@@ -18,8 +18,8 @@ const App = () => {
   ];
 
   return(
-    <div className="wrap"> 
-      <h1 className="wrap__title">
+    <div className={styles.wrap}> 
+      <h1 className={styles.title}>
         План покорения мира
       </h1>
   	  <InputItem/>
