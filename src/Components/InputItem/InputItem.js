@@ -5,8 +5,9 @@ const InputItem = ()=> (
   <div>
     <TextField
       id="standard-full-width"
-      label="напиши и сделай"
+      label="Напиши и сделай"
       placeholder="Новая задача"
+      color="secondary"
       fullWidth
       InputLabelProps={{
         shrink: true,
