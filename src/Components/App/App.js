@@ -23,7 +23,7 @@ const App = () => {
   return(
     <div className={styles.wrap}> 
       <h1 className={styles.title}>
-        План покорения мира
+        Важные дела:
       </h1>
   	  <InputItem/>
   	  <ItemList items={items} />
