@@ -2,11 +2,14 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+
 import styles from './App.module.css';
 
 class App extends React.Component {
-  render() {
-    const items = [
+  state = {
+    items: [
       {
         value: 'Пройти модуль React',
         isDone: false
@@ -19,16 +22,22 @@ class App extends React.Component {
         value: 'Приготовить ужин',
         isDone: true
       }
-    ];
+    ]
+  };
 
+  render() {
     return (
-      <div className={styles.wrap}> 
-        <h1 className={styles.title}>
-          Важные дела:
-        </h1>
-  	    <InputItem/>
-  	    <ItemList items={items} />
-  	    <Footer count={3} />
+      <div className={styles.wrap}>
+        <Card>
+          <CardContent>
+            <h1 className={styles.title}>
+              Важные дела:
+            </h1>
+  	        <InputItem/>
+  	        <ItemList items={this.state.items} />
+  	        <Footer count={3} />
+          </CardContent>
+        </Card>
       </div>
     );
   }
