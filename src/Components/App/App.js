@@ -21,9 +21,11 @@ class App extends React.Component {
       {
         value: 'Приготовить ужин',
         isDone: true
-      }
+      } 
     ]
   };
+
+  onClickDone = isDone => console.log(isDone);
 
   render() {
     return (
@@ -34,7 +36,7 @@ class App extends React.Component {
               Важные дела:
             </h1>
   	        <InputItem/>
-  	        <ItemList items={this.state.items} />
+  	        <ItemList items={this.state.items} onClickDone={this.onClickDone} />
   	        <Footer count={3} />
           </CardContent>
         </Card>
