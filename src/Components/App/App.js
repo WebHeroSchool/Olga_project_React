@@ -29,8 +29,8 @@ class App extends React.Component {
     count: 6
   };
 
-  onClickDone = id => {
-    const newItemList = this.state.items.map(item => {
+  onClickDone = (id) => {
+    const newItemList = this.state.items.map((item) => {
       const newItem = { ...item };
 
       if (item.id === id) {
