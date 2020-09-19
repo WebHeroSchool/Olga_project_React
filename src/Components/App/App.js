@@ -42,6 +42,11 @@ class App extends React.Component {
 
     this.setState({ items: newItemList });
   };
+  
+  onClickDelete = (id) => {
+     const removeItem = this.state.items.filter((item) => item.id !== id);
+     this.setState({ items: removeItem});
+  };
 
   render() {
     return (
@@ -52,7 +57,11 @@ class App extends React.Component {
               Важные дела:
             </h1>
   	        <InputItem/>
-  	        <ItemList items={this.state.items} onClickDone={this.onClickDone} />
+  	        <ItemList
+              items={this.state.items}
+              onClickDone={this.onClickDone}
+              onClickDelete={this.onClickDelete}
+             />
   	        <Footer count={this.state.count} />
           </CardContent>
         </Card>
