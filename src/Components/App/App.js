@@ -26,7 +26,7 @@ class App extends React.Component {
         id: 3
       } 
     ],
-    count: 6
+    count: 3
   };
 
   onClickDone = (id) => {
@@ -48,6 +48,18 @@ class App extends React.Component {
      this.setState({ items: removeItem});
   };
 
+  onClickAdd = (value) => this.setState(state => ({
+    items: [
+      ...state.items,
+      {
+        value,
+        isDone: false,
+        id: state.count + 1
+      }
+    ],
+    count: state.count + 1
+  }));
+
   render() {
     return (
       <div className={styles.wrap}>
@@ -56,7 +68,7 @@ class App extends React.Component {
             <h1 className={styles.title}>
               Важные дела:
             </h1>
-  	        <InputItem/>
+  	        <InputItem onClickAdd={this.onClickAdd} />
   	        <ItemList
               items={this.state.items}
               onClickDone={this.onClickDone}
