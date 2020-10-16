@@ -44,10 +44,11 @@ class App extends React.Component {
   };
   
   onClickDelete = (id) => {
-     const removeItem = this.state.items.filter((item) => item.id !== id);
-     this.setState({ items: removeItem});
+    const removeItem = this.state.items.filter((item) => item.id !== id);
+    this.setState({ items: removeItem, count: this.state.count -1 });      
   };
 
+  
   onClickAdd = (value) => this.setState(state => ({
     items: [
       ...state.items,
