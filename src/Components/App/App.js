@@ -49,7 +49,7 @@ class App extends React.Component {
   };
 
   
-  onClickAdd = (value) => this.setState(state => ({
+  onClickAdd = (value) => this.setState((state) => ({
     items: [
       ...state.items,
       {
