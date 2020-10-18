@@ -26,4 +26,10 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
   </li>
 );
 
+Item.defaultProps = {
+  value: 'ToDo',
+  isDone: false,
+  id: 1
+}
+
 export default Item;
