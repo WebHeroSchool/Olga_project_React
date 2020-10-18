@@ -8,15 +8,15 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 class Item extends React.Component {
 
   componentDidMount() {
-    console.log(`mounted`);
+    console.log('mounted');
   }
 
   componentDidUpdate() {
-    console.log(`updated`);
+    console.log('updated');
   }
 
   componentWillUnmount() {
-    console.log(`unmounted`);
+    console.log('unmounted');
   }
 
   render() {
@@ -44,7 +44,7 @@ class Item extends React.Component {
         </span>
       </li>);
   }
-};
+}
 
 Item.propTypes = {
   value: PropTypes.string.isRequired,
