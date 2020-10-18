@@ -8,15 +8,11 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 class Item extends React.Component {
 
   componentDidMount() {
-    console.log('mounted');
+    this.timerID = setInterval(() => console.log('interval'), 2000);
   }
-
-  componentDidUpdate() {
-    console.log('updated');
-  }
-
+  
   componentWillUnmount() {
-    console.log('unmounted');
+    clearInterval(this.timerID);
   }
 
   render() {
