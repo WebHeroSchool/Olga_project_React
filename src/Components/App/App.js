@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
@@ -7,8 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 
 import styles from './App.module.css';
 
-class App extends React.Component {
-  state = {
+const App = () => {
+
+  const initialState = {
     items: [
       {
         value: 'Пройти модуль React',
@@ -26,11 +27,23 @@ class App extends React.Component {
         id: 3
       } 
     ],
+
     count: 3
   };
 
-  onClickDone = (id) => {
-    const newItemList = this.state.items.map((item) => {
+  const [items, setItems] = useState(initialState.items);
+  const [count, setCount] = useState(initialState.count);
+
+  useEffect( () => {
+    console.log('Mounted');
+  }, []);
+
+  useEffect( () => {
+    console.log('Updated');
+  });
+
+  const onClickDone = (id) => {
+    const newItemList = items.map((item) => {
       const newItem = { ...item };
 
       if (item.id === id) {
@@ -40,47 +53,47 @@ class App extends React.Component {
       return newItem;
     });
 
-    this.setState({ items: newItemList });
+    setItems(newItemList);
   };
-  
-  onClickDelete = (id) => {
-    const removeItem = this.state.items.filter((item) => item.id !== id);
-    this.setState({ items: removeItem, count: this.state.count -1 });      
+
+  const onClickDelete = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+    setCount(count => count - 1);
   };
 
   
-  onClickAdd = (value) => this.setState((state) => ({
-    items: [
-      ...state.items,
+  const onClickAdd = (value) => {
+    setItems ([
+      ...items,
       {
         value,
         isDone: false,
-        id: state.count + 1
+        id: count + 1
       }
-    ],
-    count: state.count + 1
-  }));
+    ]);
+    setCount(count => count + 1);
+  };
 
-  render() {
+  
     return (
       <div className={styles.wrap}>
         <Card>
           <CardContent>
-            <h1 className={styles.title}>
+            <h2 className={styles.title}>
               Важные дела:
-            </h1>
-  	        <InputItem onClickAdd={this.onClickAdd} />
+            </h2>
+  	        <InputItem onClickAdd={onClickAdd} />
   	        <ItemList
-              items={this.state.items}
-              onClickDone={this.onClickDone}
-              onClickDelete={this.onClickDelete}
+              items={items}
+              onClickDone={onClickDone}
+              onClickDelete={onClickDelete}
              />
-  	        <Footer count={this.state.count} />
+  	        <Footer count={count} />
           </CardContent>
         </Card>
       </div>
     );
-  }
+  
 };
 
 export default App;

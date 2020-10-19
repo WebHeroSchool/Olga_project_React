@@ -1,9 +1,12 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import AddCircleRoundedIcon from '@material-ui/icons/AddCircleRounded';
 import Grid from '@material-ui/core/Grid';
 
 import styles from './InputItem.module.css';
+
+
 
 class InputItem extends React.Component {
   state = {
@@ -25,9 +28,10 @@ class InputItem extends React.Component {
     const { onClickAdd } = this.props;
 
     return (
-      <Grid>
+      <div  className={styles.task}>
         <TextField
           id="standard-dense"
+          size="small"
           label={this.state.inputLabel}          
           value={this.state.inputValue}
           onClick={() => this.setState({inputLabel: 'Напиши и сделай'})}
@@ -38,19 +42,16 @@ class InputItem extends React.Component {
           margin="dense"
           color="secondary"
           fullWidth
-         />  
-        <Button
-          variant="contained"
-          size="small"
+         /> 
+        <AddCircleRoundedIcon
           color="secondary"
-          fullWidth
           onClick={this.onButtonClick}
-        >
-        Добавить
-        </Button>
-      </Grid>
+          className={styles.button}
+         />
+      </div>
     );
   }
 }
 
 export default InputItem;
+

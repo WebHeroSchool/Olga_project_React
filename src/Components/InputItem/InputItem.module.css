@@ -1,8 +1,15 @@
+.task {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.button {
+  padding: 5px 0 5px 5px;
+}
 
 .error {
-  color: #fff;
-  background-color: #f50057;
-  border-radius: 4px;
+  color: crimson;
   position: relative;
   padding: 4px 6px;
 }

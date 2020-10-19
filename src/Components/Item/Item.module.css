@@ -1,9 +1,11 @@
 .item {
-  color: #c4c4c4;
+  color: #333;
 }
 
 .done {
-  color: #333;
+  color: #c4c4c4;
+  text-decoration: line-through;
+  text-decoration-color: #c4c4c4;
 }
 
 .list {
