@@ -7,18 +7,6 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
 class Item extends React.Component {
 
-  componentDidMount() {
-    console.log('mounted');
-  }
-
-  componentDidUpdate() {
-    console.log('updated');
-  }
-
-  componentWillUnmount() {
-    console.log('unmounted');
-  }
-
   render() {
 
     const { value, isDone, onClickDone, id, onClickDelete } = this.props;

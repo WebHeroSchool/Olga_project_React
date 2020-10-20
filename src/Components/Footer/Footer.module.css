@@ -1,5 +1,14 @@
+.count {
+  border-top: 1px solid #c4c4c4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .text {
+  text-align: center;
   color: crimson;
   font-family: Helvetica, sans-serif;
-  border-top: 1px solid #c4c4c4;
+  font-size: 12px;
+  padding: 5px;
 }
