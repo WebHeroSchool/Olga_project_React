@@ -34,8 +34,8 @@ const InputItem = (props) => {
         value={inputValue}
         onClick={() => setInputLabel('Напиши и сделай')}
         onChange={(event) => {
-          setInputValue(event.target.value.toUpperCase())
-          setInputLabel('Напиши и сделай')
+          setInputValue(event.target.value.toUpperCase());
+          setInputLabel('Напиши и сделай');
         }}
         margin="dense"
         color="secondary"
