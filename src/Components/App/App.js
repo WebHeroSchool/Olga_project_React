@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import InputItem from '../InputItem/InputItem';
@@ -25,7 +25,7 @@ const App = () => {
         value: 'Приготовить ужин',
         isDone: true,
         id: 3
-      } 
+      }
     ],
 
     count: 3
@@ -33,14 +33,6 @@ const App = () => {
 
   const [items, setItems] = useState(initialState.items);
   const [count, setCount] = useState(initialState.count);
-
-  useEffect( () => {
-    console.log('Mounted');
-  }, []);
-
-  useEffect( () => {
-    console.log('Updated');
-  });
 
   const onClickDone = (id) => {
     const newItemList = items.map((item) => {
@@ -61,9 +53,9 @@ const App = () => {
     setCount(count => count - 1);
   };
 
-  
+
   const onClickAdd = (value) => {
-    setItems ([
+    setItems([
       ...items,
       {
         value,
@@ -74,26 +66,26 @@ const App = () => {
     setCount(count => count + 1);
   };
 
-  
-    return (
-      <div className={styles.wrap}>
-        <Card>
-          <CardContent>
-            <h2 className={styles.title}>
-              Важные дела:
+
+  return (
+    <div className={styles.wrap}>
+      <Card>
+        <CardContent>
+          <h2 className={styles.title}>
+            Важные дела:
             </h2>
-  	        <InputItem onClickAdd={onClickAdd} />
-  	        <ItemList
-              items={items}
-              onClickDone={onClickDone}
-              onClickDelete={onClickDelete}
-             />
-  	        <Footer count={count} />
-          </CardContent>
-        </Card>
-      </div>
-    );
-  
+          <InputItem onClickAdd={onClickAdd} />
+          <ItemList
+            items={items}
+            onClickDone={onClickDone}
+            onClickDelete={onClickDelete}
+          />
+          <Footer count={count} />
+        </CardContent>
+      </Card>
+    </div>
+  );
+
 };
 
 export default App;
