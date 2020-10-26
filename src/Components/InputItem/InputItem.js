@@ -21,7 +21,7 @@ const InputItem = (props) => {
       setInputValue('');
       props.onClickAdd(inputValue);
     } else {
-      setInputLabel(<span className={styles.error}> Необходимо заполнить поле</span>);
+      setInputLabel(<span className={styles.error}>Необходимо заполнить поле</span>);
     }
   };
 
