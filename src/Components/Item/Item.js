@@ -5,34 +5,59 @@ import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
-class Item extends React.Component {
+const Item = (props) => {
+  const { value, isDone, onClickDone, id, onClickDelete } = props;
 
-  render() {
-
-    const { value, isDone, onClickDone, id, onClickDelete } = this.props;
-    
-    return (
-      <li className = {styles.list}>
-        <span className = {
-          classnames({
-            [styles.item]: true,
-            [styles.done]: isDone,
+  return (
+    <li className={styles.list}>
+      <span className={
+        classnames({
+          [styles.item]: true,
+          [styles.done]: isDone,
         })}>
-          <Checkbox
-            color="secondary"
-            checked={isDone}
-            onClick={() => onClickDone(id)} 
-           />  
-          {value}
-          <DeleteOutlinedIcon
+        <Checkbox
+          color="secondary"
+          checked={isDone}
+          onClick={() => onClickDone(id)}
+        />
+        {value}
+        <DeleteOutlinedIcon
           onClick={() => onClickDelete(id)}
           color="secondary"
           className={styles.delete}
-           />  
-        </span>
-      </li>);
-  }
+        />
+      </span>
+    </li>);
 }
+
+// class Item extends React.Component {
+
+//   render() {
+
+//     const { value, isDone, onClickDone, id, onClickDelete } = this.props;
+
+//     return (
+//       <li className = {styles.list}>
+//         <span className = {
+//           classnames({
+//             [styles.item]: true,
+//             [styles.done]: isDone,
+//         })}>
+//           <Checkbox
+//             color="secondary"
+//             checked={isDone}
+//             onClick={() => onClickDone(id)} 
+//            />  
+//           {value}
+//           <DeleteOutlinedIcon
+//           onClick={() => onClickDelete(id)}
+//           color="secondary"
+//           className={styles.delete}
+//            />  
+//         </span>
+//       </li>);
+//   }
+// }
 
 Item.propTypes = {
   value: PropTypes.string.isRequired,
