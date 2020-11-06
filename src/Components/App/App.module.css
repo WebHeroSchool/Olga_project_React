@@ -17,7 +17,7 @@ body {
 
 .wrap {
   display: grid;
-  grid-template-areas: 'sidebar ... content content' ;
+  grid-template-areas: 'sidebar ... content content';
   margin: auto;
   width: 500px;
 }

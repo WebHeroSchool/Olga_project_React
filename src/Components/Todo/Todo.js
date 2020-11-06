@@ -33,14 +33,6 @@ const Todo = () => {
   const [items, setItems] = useState(initialState.items);
   const [count, setCount] = useState(initialState.count);
 
-  useEffect(() => {
-    console.log('Mounted');
-  }, []);
-
-  useEffect(() => {
-    console.log('Updated');
-  });
-
   const onClickDone = (id) => {
     const newItemList = items.map((item) => {
       const newItem = { ...item };
@@ -57,7 +49,7 @@ const Todo = () => {
 
   const onClickDelete = (id) => {
     setItems(items.filter((item) => item.id !== id));
-    setCount(count => count - 1);
+    setCount((count) => count - 1);
   };
 
 
@@ -70,7 +62,7 @@ const Todo = () => {
         id: count + 1
       }
     ]);
-    setCount(count => count + 1);
+    setCount((count) => count + 1);
   };
 
 
