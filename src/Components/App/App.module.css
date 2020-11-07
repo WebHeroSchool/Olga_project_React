@@ -1,8 +1,23 @@
-.wrap {
-  margin: auto;
-  width: 350px;
+body {
+  font-family: Helvetica, sans-serif;
 }
 
-.title {
-  font-family: Helvetica, sans-serif;
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.wrap {
+  display: grid;
+  grid-template-areas: 'sidebar ... content content';
+  margin: auto;
+  width: 500px;
 }
