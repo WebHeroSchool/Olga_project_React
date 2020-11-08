@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Octokit } from "@octokit/rest";
+import { Octokit } from '@octokit/rest';
 
 import styles from './About.module.css';
 
