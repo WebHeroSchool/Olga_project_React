@@ -1,0 +1,27 @@
+.userInfo {
+  font-family: Helvetica, sans-serif;
+  line-height: .5;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.userAvatar {
+  width: 45%;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.text {
+  text-decoration: underline;
+  color: #154088;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+   
+}
+a:hover {
+  color: #154088;
+}
