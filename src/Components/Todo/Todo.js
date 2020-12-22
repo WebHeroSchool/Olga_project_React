@@ -1,37 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
+
 import InputItem from '../InputItem/InputItem';
 import CardContent from '@material-ui/core/CardContent';
 
 import styles from './Todo.module.css';
+import classnames from 'classnames';
 
 const Todo = () => {
 
   const initialState = {
-    items: [
-      {
-        value: 'Пройти модуль React',
-        isDone: false,
-        id: 1
-      },
-      {
-        value: 'Погулять с собакой',
-        isDone: true,
-        id: 2
-      },
-      {
-        value: 'Приготовить ужин',
-        isDone: true,
-        id: 3
-      }
-    ],
+    items: [],
 
-    count: 3
+    count: 0,
+    activeLink: 'all',
+    fixitem: false
   };
 
   const [items, setItems] = useState(initialState.items);
   const [count, setCount] = useState(initialState.count);
+  const [activeLink, setActiveLink] = useState(initialState.activeLink);
+
+  useEffect(() => {
+    const raw = localStorage.getItem('items') || []
+    setItems(JSON.parse(raw))
+  }, []);
+
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items))
+  }, [items]);
+
+  const onClickSetActive = item => setActiveLink(item.id);
+  const filters = [
+    {
+      id: 'incompleted',
+      name: 'Незавершенные',
+      count: items.filter(item => !item.isDone).length
+    },
+    {
+      id: 'completed',
+      name: 'Завершенные',
+      count: items.filter(item => item.isDone).length
+    },
+    {
+      id: 'all',
+      name: 'Все',
+      count: count
+    }
+  ];
 
   const onClickDone = (id) => {
     const newItemList = items.map((item) => {
@@ -77,7 +95,24 @@ const Todo = () => {
         onClickDone={onClickDone}
         onClickDelete={onClickDelete}
       />
-      <Footer count={count} />
+      <ul className={styles['filters-list']}>
+        {filters
+          .filter(item => item)
+          .map(item => (
+            <li key={item.id}>
+              <button
+                className={classnames({
+                  [styles.button]: true,
+                  [styles.active]: (item.id === activeLink)
+                })}
+                onClick={() => onClickSetActive(item)}
+              >
+                {item.name + ' '}
+                <span className={styles.number}>{item.count}</span>
+              </button>
+            </li>
+          ))}
+      </ul>
     </CardContent>
   );
 

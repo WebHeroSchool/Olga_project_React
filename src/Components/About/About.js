@@ -29,32 +29,34 @@ const About = () => {
   const [error, setError] = useState(initialState.error);
 
   useEffect(() => {
-    octokit.repos.listForUser({
-      username: login,
-    })
-      .then((repositories) => {
-        setReposList(repositories.data);
-        setIsLoading(false);
-      }).catch((err) => {
-        setError(err);
-        setIsLoading(false);
-      });
-    octokit.users.getByUsername({
-      username: login
-    })
-      .then((userData) => {
-        setName(userData.data.name);
-        setAvatarUrl(userData.data.avatar_url);
-        setHtmlUrl(userData.data.html_url);
-        setBio(userData.data.bio);
-      }).catch((err) => {
-        setError(err);
-      });
+    setTimeout(() => {
+      octokit.repos.listForUser({
+        username: login,
+      })
+        .then((repositories) => {
+          setReposList(repositories.data);
+          setIsLoading(false);
+        }).catch((err) => {
+          setError(err);
+          setIsLoading(false);
+        });
+      octokit.users.getByUsername({
+        username: login
+      })
+        .then((userData) => {
+          setName(userData.data.name);
+          setAvatarUrl(userData.data.avatar_url);
+          setHtmlUrl(userData.data.html_url);
+          setBio(userData.data.bio);
+        }).catch((err) => {
+          setError(err);
+        });
+    }, 2000);
   }, []);
 
   return (
     <CardContent>
-      { isLoading ? <CircularProgress /> :
+      { isLoading ? <CircularProgress style={{ display: "block", margin: "auto" }} /> :
         <div className={styles.userInfo}>
           <img className={styles.userAvatar} src={avatarUrl} />
           <div>

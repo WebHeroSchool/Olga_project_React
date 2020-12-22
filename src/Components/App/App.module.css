@@ -2,22 +2,50 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
-.link {
-  text-decoration: none;
-  color: black;
+.wrap {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  width: 500px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .sidebar {
-  grid-area: sidebar;
+  margin: auto;
+  padding: 5px;
+  border-radius: 0;
+  text-align: center;
 }
 
 .content {
   grid-area: content;
 }
 
-.wrap {
-  display: grid;
-  grid-template-areas: 'sidebar ... content content';
-  margin: auto;
-  width: 500px;
+.link {
+  display: block;
+  padding: 10px 30px;
+  margin: 0 5px;
+  border-radius: 35px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.link:hover {
+  color: #fff;
+  background-color: SteelBlue;
+  cursor: pointer;
+}
+
+.active {
+  color: #fff;
+  background-color: SteelBlue;
+  border-radius: 35px;
 }
