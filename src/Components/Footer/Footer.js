@@ -1,68 +1,65 @@
 
-import React, { useState } from 'react';
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
+import { TaskContext } from '../Context/TaskContextProvider';
+import styles from './Footer.module.css';
 import classnames from 'classnames';
 
-const Footer = (props) => {
-  const initData = {
-    activeLink: 'all'
-  };
+const Footer = () => {
+  const [todos, setTodos] = useContext(TaskContext);
+  const [sortItem, setSortItem] = useState('all');
 
-  const [activeLink, setActiveLink] = useState(initData.activeLink);
-  const onClickSetActive = item => setActiveLink(item.id);
+  const allItems = todos;
+  const activeItems = todos.filter((todo) => !todo.complete);
+  const complitedItems = todos.filter((todo) => todo.complete);
 
-  const filters = [
-    {
-      id: 'incompleted',
-      name: 'Незавершенные',
-      count: props.items.filter(item => !item.isDone).length
-    },
-    {
-      id: 'completed',
-      name: 'Завершенные',
-      count: props.items.filter(item => item.isDone).length
-    },
-    {
-      id: 'all',
-      name: 'Все',
-      count: props.count
-    }
-  ];
-  return (<ul className={props.classes['filters-list']}>
-    {filters
-      .filter(item => item)
-      .map(item => (
-        <li key={item.id}>
-          <button
-            className={classnames({
-              [props.classes.button]: true,
-              [props.classes.active]: (item.id === activeLink)
-            })}
-            onClick={() => onClickSetActive(item)}
-          >
-            {item.name + ' '}
-            <span className={props.classes.number}>{item.count}</span>
-          </button>
-        </li>
-      ))}
-  </ul>)
-}
-Footer.defaultProps = {
-  count: 0
-}
+  const onClickSorting = (sorting) => setSortItem(sorting);
 
+  let sortingItems;
+  switch (sortItem) {
+    case 'all':
+      sortingItems = todos;
+      break;
+    case 'Active':
+      sortingItems = todos.filter((todo) => !todo.complete);
+      break;
+    case 'Complited':
+      sortingItems = todos.filter((todo) => todo.complete);
+      break;
+    default:
+      sortingItems = todos;
+  }
 
-// const Footer = ({ count }) => (
-//   <footer className={styles.count}>
-//     <div className={styles.text}>
-//       Оставшиеся задачи: {count}
-//     </div>   
-//   </footer>
-// );
-
-// Footer.propTypes = {
-//   count: PropTypes.number.isRequired
-// };
+  return (
+    <div className={styles.wrap}>
+      <button
+        className={classnames({
+          [styles.button]: true,
+          [styles.button_all]: sortItem === 'all',
+        })}
+        onClick={() => onClickSorting('all')}
+      >
+        Все<p className={styles.count}>{allItems.length}</p>
+      </button>
+      <button
+        className={classnames({
+          [styles.button]: true,
+          [styles.button_active]: sortItem === 'Active',
+        })}
+        onClick={() => onClickSorting('Active')}
+      >
+        Незавершенные<p className={styles.count}>{activeItems.length}</p>
+      </button>
+      <button
+        className={classnames({
+          [styles.button]: true,
+          [styles.button_active]: sortItem === 'Complited',
+        })}
+        onClick={() => onClickSorting('Complited')}
+      >
+        Выполненные<p className={styles.count}>{complitedItems.length}</p>
+      </button>
+    </div>
+  )
+};
 
 export default Footer;

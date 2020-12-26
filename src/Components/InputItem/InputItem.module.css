@@ -1,15 +1,27 @@
-.task {
+.form {
+  width: 100%;
+  height: 40px;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
+  border: 2px solid SteelBlue;
+  border-radius: 10px;
 }
 
+.input,
 .button {
-  padding: 5px 0 5px 5px;
+  flex: 3;
+  border: none;
+  outline: none;
 }
 
-.error {
-  color: SteelBlue;
-  position: relative;
-  padding: 4px 6px;
+.input {
+  border-radius: 10px;
+  margin: 8px;
+}
+
+.button  {
+  flex: 1;
+  background: SteelBlue;
+  color: #fff;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
 }

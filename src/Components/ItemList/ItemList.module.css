@@ -1,10 +1,4 @@
-.list {
-  list-style-type: none;
-  text-align: left;
-  padding: 0;
-}
-
-.delete {
-  position: relative;
-  float: right;
-}
+ ul {
+   margin-bottom: 30px;
+   padding: 5px;
+ }

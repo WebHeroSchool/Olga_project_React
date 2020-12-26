@@ -16,11 +16,11 @@ const App = () => {
             <NavLink to='/todo' className={styles.link} activeClassName={styles.active}>Дела</NavLink>
           </header>
         </div>
-        <Card className={styles.content}>
+        <div className={styles.content}>
           <Route path='/' exact component={About} />
           <Route path='/todo' component={Todo} />
           <Route path='/contacts' component={Contacts} />
-        </Card>
+        </div>
       </div>
     </Router>);
 };

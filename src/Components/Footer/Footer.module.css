@@ -1,14 +1,49 @@
-.count {
-  border-top: 1px solid #c4c4c4;
+.wrap {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-.text {
-  text-align: center;
-  color: crimson;
-  font-family: Helvetica, sans-serif;
-  font-size: 12px;
+.button {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
   padding: 5px;
+  margin: 0 5px;
+}
+
+.button_all {
+  background: SteelBlue;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.button_all .count {
+  color: #fff;
+}
+
+.button_active .count {
+  color: #fff;
+}
+
+.button:hover,.button:focus {
+  background: SteelBlue;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.button:hover {
+opacity: .8;
+}
+
+.count {
+  padding-left: 5px;
+  color: SteelBlue;
+  margin: 0;
+}
+
+.button:hover .count {
+  color: #fff;
 }
