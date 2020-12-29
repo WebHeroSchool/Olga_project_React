@@ -4,32 +4,47 @@ import { TaskContext } from '../Context/TaskContextProvider'
 import styles from './InputItem.module.css';
 
 const InputItem = () => {
-  const [todos, setTodos] = useContext(TaskContext);
-  const [todoName, setTodoName] = useState(' ');
+  const { todos, setTodos } = useContext(TaskContext);
+  const [todoName, setTodoName] = useState('');
+  const [isRepeat, setIsRepet] = useState(false);
 
-  const handleChange = (e) => {
-    setTodoName(e.target.value.toLowerCase())
+  const onClickAdd = (todoName) => {
+    setIsRepet(false);
+
+    todos.forEach((todo) => {
+      if (todo.name === todoName) {
+        setIsRepet(true);
+        todoName = false;
+      }
+    });
+
+    if (todoName) {
+      setTodos([{ id: Math.floor(Math.random() * 100000), name: todoName, complete: false }, ...todos]);
+    }
   };
 
   const addTodo = (e) => {
     e.preventDefault();
 
-    setTodoName('');
-    setTodos([...todos, { name: todoName, complete: false }])
+    if (todoName) {
+      onClickAdd(todoName)
+      setTodoName('');
+    }
   };
 
   return (
-    <form autoComplete='off' onSubmit={addTodo} className={styles.form}>
+
+    <form autoComplete='off' onSubmit={addTodo} className={!isRepeat ? styles.form : styles.form_error}>
       <input className={styles.input}
         type='text'
         name='todos'
         id='todos'
-        placeholder={'Напиши и сделай'}
         required
+        placeholder={!isRepeat ? 'Напиши и сделай' : 'Такая задача уже есть'}
         value={todoName}
-        onChange={handleChange}
+        onChange={(e) => setTodoName(e.target.value.toLowerCase())}
       />
-      <button className={styles.button} type='submit'>Создать</button>
+      <button className={!isRepeat ? styles.button : styles.button_error} type='submit'>Создать</button>
     </form>
   );
 }

@@ -11,7 +11,7 @@ const Todo = () => {
     <TaskContextProvider>
       <div className={styles.todo}>
         <h3 className={styles.title}>
-          Важные дела:
+          Список дел:
         </h3>
         <InputItem />
         <ItemList />

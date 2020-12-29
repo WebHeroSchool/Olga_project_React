@@ -11,6 +11,7 @@ const Item = ({ todo, id, checkComplete, handleEditTodos, handleOnDelete }) => {
   const handleOnEdit = () => {
     setOnEdit(true)
   }
+
   const handleSave = (id) => {
     setOnEdit(false)
     if (editValue) {

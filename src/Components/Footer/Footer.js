@@ -1,40 +1,18 @@
 
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { TaskContext } from '../Context/TaskContextProvider';
 import styles from './Footer.module.css';
 import classnames from 'classnames';
 
 const Footer = () => {
-  const [todos, setTodos] = useContext(TaskContext);
-  const [sortItem, setSortItem] = useState('all');
-
-  const allItems = todos;
-  const activeItems = todos.filter((todo) => !todo.complete);
-  const complitedItems = todos.filter((todo) => todo.complete);
-
-  const onClickSorting = (sorting) => setSortItem(sorting);
-
-  let sortingItems;
-  switch (sortItem) {
-    case 'all':
-      sortingItems = todos;
-      break;
-    case 'Active':
-      sortingItems = todos.filter((todo) => !todo.complete);
-      break;
-    case 'Complited':
-      sortingItems = todos.filter((todo) => todo.complete);
-      break;
-    default:
-      sortingItems = todos;
-  }
+  const { filterTodo, allItems, activeItems, complitedItems, onClickSorting } = useContext(TaskContext);
 
   return (
     <div className={styles.wrap}>
       <button
         className={classnames({
           [styles.button]: true,
-          [styles.button_all]: sortItem === 'all',
+          [styles.button_all]: filterTodo === 'all',
         })}
         onClick={() => onClickSorting('all')}
       >
@@ -43,7 +21,7 @@ const Footer = () => {
       <button
         className={classnames({
           [styles.button]: true,
-          [styles.button_active]: sortItem === 'Active',
+          [styles.button_active]: filterTodo === 'Active',
         })}
         onClick={() => onClickSorting('Active')}
       >
@@ -52,7 +30,7 @@ const Footer = () => {
       <button
         className={classnames({
           [styles.button]: true,
-          [styles.button_active]: sortItem === 'Complited',
+          [styles.button_active]: filterTodo === 'Complited',
         })}
         onClick={() => onClickSorting('Complited')}
       >

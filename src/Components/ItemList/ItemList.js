@@ -6,7 +6,7 @@ import styles from './ItemList.module.css';
 
 
 const ItemList = () => {
-  const [todos, setTodos] = useContext(TaskContext);
+  const { todos, setTodos, newItemList } = useContext(TaskContext);
 
   const switchComplete = (id) => {
     const newTodos = [...todos]
@@ -26,25 +26,34 @@ const ItemList = () => {
       }
     })
     setTodos(newTodos)
-  }
+  };
 
   const handleOnDelete = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+
+
   return (
-    <ul>
-      {todos.map((todo, index) => (
-        <Item
-          key={index}
-          todo={todo}
-          id={index}
-          checkComplete={switchComplete}
-          handleEditTodos={handleEditTodos}
-          handleOnDelete={handleOnDelete}
-        />
-      ))}
-    </ul>
+    <div className={styles.wrap} >
+      {newItemList.length > 0 ? (
+        <ul className={styles.item_list}>
+          {newItemList.map((todo, index) => {
+            return <Item
+              key={index}
+              todo={todo}
+              id={index}
+              checkComplete={switchComplete}
+              handleEditTodos={handleEditTodos}
+              handleOnDelete={handleOnDelete}
+            />
+          })}
+        </ul>)
+        : (
+          <div className={styles.no_todo}>Важных дел нет</div>
+        )
+      }
+    </div>
   )
 }
 
