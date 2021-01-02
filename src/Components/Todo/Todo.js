@@ -18,7 +18,7 @@ const Todo = () => {
         <Footer />
       </div>
     </TaskContextProvider>
-  )
+  );
 };
 
 export default Todo;

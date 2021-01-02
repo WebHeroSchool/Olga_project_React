@@ -1,6 +1,6 @@
 
 import React, { useState, useContext } from 'react';
-import { TaskContext } from '../Context/TaskContextProvider'
+import { TaskContext } from '../Context/TaskContextProvider';
 import styles from './InputItem.module.css';
 
 const InputItem = () => {
@@ -32,7 +32,7 @@ const InputItem = () => {
     e.preventDefault();
 
     if (todoName) {
-      onClickAdd(todoName)
+      onClickAdd(todoName);
       setTodoName('');
     }
   };

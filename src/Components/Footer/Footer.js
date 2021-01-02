@@ -37,7 +37,7 @@ const Footer = () => {
         Выполненные<p className={styles.count}>{complitedItems.length}</p>
       </button>
     </div>
-  )
+  );
 };
 
 export default Footer;

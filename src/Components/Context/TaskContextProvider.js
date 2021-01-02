@@ -11,13 +11,13 @@ export const TaskContextProvider = (props) => {
   const complitedItems = todos.filter((todo) => todo.complete);
 
   useEffect(() => {
-    const todoStore = JSON.parse(localStorage.getItem('todoStore'))
-    if (todoStore) setTodos(todoStore)
+    const todoStore = JSON.parse(localStorage.getItem('todoStore'));
+    if (todoStore) setTodos(todoStore);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('todoStore', JSON.stringify(todos))
-  }, [todos])
+    localStorage.setItem('todoStore', JSON.stringify(todos));
+  }, [todos]);
 
   const onClickSorting = (filterTodo) => setFilterTodo(filterTodo);
 
@@ -49,5 +49,5 @@ export const TaskContextProvider = (props) => {
     }}>
       {props.children}
     </TaskContext.Provider>
-  )
-}
+  );
+};

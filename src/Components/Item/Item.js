@@ -5,18 +5,18 @@ import { FiSave } from 'react-icons/fi';
 import styles from './Item.module.css';
 
 const Item = ({ todo, id, checkComplete, handleEditTodos, handleOnDelete }) => {
-  const [onEdit, setOnEdit] = useState(false)
+  const [onEdit, setOnEdit] = useState(false);
   const [editValue, setEditValue] = useState(todo.name);
 
   const handleOnEdit = () => {
-    setEditValue(todo.name)
-    setOnEdit(true)
-  }
+    setEditValue(todo.name);
+    setOnEdit(true);
+  };
 
   const handleSave = (id) => {
-    setOnEdit(false)
+    setOnEdit(false);
     if (editValue) {
-      handleEditTodos(editValue, id)
+      handleEditTodos(editValue, id);
     } else {
       setEditValue(todo.name)
     }
@@ -38,7 +38,7 @@ const Item = ({ todo, id, checkComplete, handleEditTodos, handleOnDelete }) => {
           />
         </div>
       </li>
-    )
+    );
   } else {
     return (
       <li className={styles.list}>

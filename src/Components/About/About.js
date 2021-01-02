@@ -56,7 +56,7 @@ const About = () => {
 
   return (
     <CardContent>
-      { isLoading ? <CircularProgress style={{ display: "block", margin: "auto" }} /> :
+      { isLoading ? <CircularProgress style={{ display: 'block', margin: 'auto' }} /> :
         <div className={styles.userInfo}>
           <img className={styles.userAvatar} src={avatarUrl} />
           <div>

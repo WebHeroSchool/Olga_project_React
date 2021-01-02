@@ -9,20 +9,20 @@ const ItemList = () => {
   const { todos, setTodos, newItemList } = useContext(TaskContext);
 
   const switchComplete = (id) => {
-    const newTodos = [...todos]
+    const newTodos = [...todos];
     newTodos.forEach((todo) => {
       if (todo.id === id) {
-        todo.complete = !todo.complete
+        todo.complete = !todo.complete;
       }
-    })
-    setTodos(newTodos)
-  }
+    });
+    setTodos(newTodos);
+  };
 
   const handleEditTodos = (editValue, id) => {
-    const newTodos = [...todos]
+    const newTodos = [...todos];
     newTodos.forEach((todo) => {
       if (todo.id === id) {
-        todo.name = editValue
+        todo.name = editValue;
       }
     })
     setTodos(newTodos)
@@ -46,7 +46,7 @@ const ItemList = () => {
               checkComplete={switchComplete}
               handleEditTodos={handleEditTodos}
               handleOnDelete={handleOnDelete}
-            />
+            />;
           })}
         </ul>)
         : (
@@ -54,7 +54,7 @@ const ItemList = () => {
         )
       }
     </div>
-  )
+  );
 }
 
 export default ItemList;

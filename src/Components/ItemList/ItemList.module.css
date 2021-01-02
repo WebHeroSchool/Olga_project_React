@@ -1,10 +1,10 @@
- .item_list {
-   margin-bottom: 30px;
-   padding: 5px;
- }
+.item_list {
+  margin-bottom: 30px;
+  padding: 5px;
+}
 
- .no_todo {
-   margin: 20px auto;
-   text-align: center;
-   color: DarkSlateBlue;
-  }
+.no_todo {
+  margin: 20px auto;
+  text-align: center;
+  color: DarkSlateBlue;
+}
