@@ -8,7 +8,12 @@ const InputItem = () => {
   const [todoName, setTodoName] = useState('');
   const [isRepeat, setIsRepet] = useState(false);
 
+  const handleChange = (e) => {
+    setTodoName(e.target.value.charAt(0).toUpperCase() + e.target.value.toLowerCase().slice(1))
+  };
+
   const onClickAdd = (todoName) => {
+
     setIsRepet(false);
 
     todos.forEach((todo) => {
@@ -34,7 +39,10 @@ const InputItem = () => {
 
   return (
 
-    <form autoComplete='off' onSubmit={addTodo} className={!isRepeat ? styles.form : styles.form_error}>
+    <form
+      autoComplete='off'
+      onSubmit={addTodo}
+      className={!isRepeat ? styles.form : styles.form_error}>
       <input className={styles.input}
         type='text'
         name='todos'
@@ -42,7 +50,7 @@ const InputItem = () => {
         required
         placeholder={!isRepeat ? 'Напиши и сделай' : 'Такая задача уже есть'}
         value={todoName}
-        onChange={(e) => setTodoName(e.target.value.toLowerCase())}
+        onChange={handleChange}
       />
       <button className={!isRepeat ? styles.button : styles.button_error} type='submit'>Создать</button>
     </form>

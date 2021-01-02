@@ -9,6 +9,7 @@ const Item = ({ todo, id, checkComplete, handleEditTodos, handleOnDelete }) => {
   const [editValue, setEditValue] = useState(todo.name);
 
   const handleOnEdit = () => {
+    setEditValue(todo.name)
     setOnEdit(true)
   }
 
@@ -29,7 +30,7 @@ const Item = ({ todo, id, checkComplete, handleEditTodos, handleOnDelete }) => {
           id={editValue}
           value={editValue}
           name='editValue'
-          onChange={(e) => setEditValue(e.target.value.toLowerCase())}
+          onChange={(e) => setEditValue(e.target.value.charAt(0).toUpperCase() + e.target.value.toLowerCase().slice(1))}
         />
         <div className={styles.save}>
           <FiSave

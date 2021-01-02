@@ -10,8 +10,8 @@ const ItemList = () => {
 
   const switchComplete = (id) => {
     const newTodos = [...todos]
-    newTodos.forEach((todo, index) => {
-      if (index === id) {
+    newTodos.forEach((todo) => {
+      if (todo.id === id) {
         todo.complete = !todo.complete
       }
     })
@@ -20,8 +20,8 @@ const ItemList = () => {
 
   const handleEditTodos = (editValue, id) => {
     const newTodos = [...todos]
-    newTodos.forEach((todo, index) => {
-      if (index === id) {
+    newTodos.forEach((todo) => {
+      if (todo.id === id) {
         todo.name = editValue
       }
     })
@@ -38,11 +38,11 @@ const ItemList = () => {
     <div className={styles.wrap} >
       {newItemList.length > 0 ? (
         <ul className={styles.item_list}>
-          {newItemList.map((todo, index) => {
+          {newItemList.map((todo) => {
             return <Item
-              key={index}
+              key={todo.id}
               todo={todo}
-              id={index}
+              id={todo.id}
               checkComplete={switchComplete}
               handleEditTodos={handleEditTodos}
               handleOnDelete={handleOnDelete}
