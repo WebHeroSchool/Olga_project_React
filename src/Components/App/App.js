@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import Card from '@material-ui/core/Card';
 import Todo from '../Todo/Todo';
 import About from '../About/About';
-import Contacts from '../Contacts/Contacts';
 import styles from './App.module.css';
 
 const App = () => {
