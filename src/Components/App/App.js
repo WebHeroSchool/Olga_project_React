@@ -11,15 +11,12 @@ const App = () => {
     <Router>
       <div className={styles.wrap}>
         <div className={styles.sidebar}>
-          <header className={styles.menu}>
-            <NavLink exact to='/' className={styles.link} activeClassName={styles.active}>Обо мне</NavLink>
-            <NavLink to='/todo' className={styles.link} activeClassName={styles.active}>Дела</NavLink>
-          </header>
+          <NavLink exact to='/' className={styles.link} activeClassName={styles.active}>Обо мне</NavLink>
+          <NavLink to='/todo' className={styles.link} activeClassName={styles.active}>Дела</NavLink>
         </div>
         <div className={styles.content}>
           <Route path='/' exact component={About} />
           <Route path='/todo' component={Todo} />
-          <Route path='/contacts' component={Contacts} />
         </div>
       </div>
     </Router>);

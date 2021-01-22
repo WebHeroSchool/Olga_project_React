@@ -6,7 +6,10 @@
   border-radius: 10px;
 }
 
-.form { border: 2px solid SteelBlue; }
+.form {
+  margin-bottom: 15px;
+  border: 2px solid DarkSlateBlue;
+}
 
 .form_error { border: 2px solid orange; }
 
@@ -28,6 +31,19 @@
   outline: none;
 }
 
-.button { background: SteelBlue; }
+.button { background: DarkSlateBlue; }
 
 .button_error { background: orange; }
+
+@media screen and (max-width: 460px) {
+  
+  .form,
+  .form_error {
+    height: 30px;
+  }
+
+  .form {
+  margin-bottom: 10px; 
+  }
+
+}

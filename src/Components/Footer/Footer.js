@@ -12,7 +12,7 @@ const Footer = () => {
       <button
         className={classnames({
           [styles.button]: true,
-          [styles.button_all]: filterTodo === 'all',
+          [styles.button_active]: filterTodo === 'all',
         })}
         onClick={() => onClickSorting('all')}
       >
