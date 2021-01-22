@@ -65,13 +65,13 @@ const About = () => {
   }, []);
 
   const onClickNext = () => {
-    setFirstRepo(firstRepo => firstRepo + 3);
-    setLastRepo(lastRepo => lastRepo + 3);
+    setFirstRepo((firstRepo) => firstRepo + 3);
+    setLastRepo((lastRepo) => lastRepo + 3);
   };
 
   const onClickBack = () => {
-    setFirstRepo(firstRepo => firstRepo - 3);
-    setLastRepo(lastRepo => lastRepo - 3);
+    setFirstRepo((firstRepo) => firstRepo - 3);
+    setLastRepo((lastRepo) => lastRepo - 3);
   };
 
   const repoPag = reposList.slice(firstRepo, lastRepo);
@@ -112,7 +112,7 @@ const About = () => {
           <div className={styles.repo_wrap}>
             <h3 className={styles.repo_text}>Мои репозитории:</h3>
             {reposList.length > 0 && <ul className={styles.repolist}>
-              {repoPag.map(repo => (
+              {repoPag.map((repo) => (
                 <li
                   className={styles.list_item}
                   key={repo.id}
@@ -126,9 +126,9 @@ const About = () => {
                   <div className={styles.repo_info}>
                     <span className={classnames({
                       [styles.language]: true,
-                      [styles.html]: repo.language === "HTML",
-                      [styles.css]: repo.language === "CSS",
-                      [styles.js]: repo.language === "JavaScript",
+                      [styles.html]: repo.language === 'HTML',
+                      [styles.css]: repo.language === 'CSS',
+                      [styles.js]: repo.language === 'JavaScript',
                       [styles.no_lang]: repo.language === null
                     })}>
                       {repo.language}

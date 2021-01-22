@@ -24,8 +24,8 @@ const ItemList = () => {
       if (todo.id === id) {
         todo.name = editValue;
       }
-    })
-    setTodos(newTodos)
+    });
+    setTodos(newTodos);
   };
 
   const handleOnDelete = (id) => {
@@ -55,6 +55,6 @@ const ItemList = () => {
       }
     </div>
   );
-}
+};
 
 export default ItemList;

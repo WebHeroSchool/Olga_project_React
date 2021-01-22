@@ -12,7 +12,9 @@ export const TaskContextProvider = (props) => {
 
   useEffect(() => {
     const todoStore = JSON.parse(localStorage.getItem('todoStore'));
-    if (todoStore) setTodos(todoStore);
+    if (todoStore) {
+      setTodos(todoStore);
+    }
   }, []);
 
   useEffect(() => {

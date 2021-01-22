@@ -36,14 +36,10 @@
 .button_error { background: orange; }
 
 @media screen and (max-width: 460px) {
-  
   .form,
   .form_error {
     height: 30px;
   }
 
-  .form {
-  margin-bottom: 10px; 
-  }
-
+  .form { margin-bottom: 10px; }
 }

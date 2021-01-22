@@ -45,7 +45,6 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-
   .sidebar {
     margin: 10px;
     background-size: 50px auto;
@@ -61,5 +60,4 @@ body {
   .active {
     border-radius: 8px;
   }
-
 }

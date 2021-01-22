@@ -18,9 +18,9 @@ const Item = ({ todo, id, checkComplete, handleEditTodos, handleOnDelete }) => {
     if (editValue) {
       handleEditTodos(editValue, id);
     } else {
-      setEditValue(todo.name)
+      setEditValue(todo.name);
     }
-  }
+  };
 
   if (onEdit) {
     return (
@@ -65,7 +65,7 @@ const Item = ({ todo, id, checkComplete, handleEditTodos, handleOnDelete }) => {
           </div>
         </div>
       </li>
-    )
+    );
   }
 }
 

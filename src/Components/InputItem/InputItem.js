@@ -9,7 +9,7 @@ const InputItem = () => {
   const [isRepeat, setIsRepet] = useState(false);
 
   const handleChange = (e) => {
-    setTodoName(e.target.value.charAt(0).toUpperCase() + e.target.value.toLowerCase().slice(1))
+    setTodoName(e.target.value.charAt(0).toUpperCase() + e.target.value.toLowerCase().slice(1));
   };
 
   const onClickAdd = (todoName) => {

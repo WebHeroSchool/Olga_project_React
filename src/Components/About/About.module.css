@@ -14,12 +14,12 @@
 }
 
 .avatar {
-  height:auto;
+  height: auto;
   width: 150px;
 }
 
 .userAvatar {
-  height:auto;
+  height: auto;
   width: 150px;
   border-radius: 15px;
 }
@@ -31,7 +31,9 @@
   padding: 0 20px;
 }
 
-p, h2, h3 {
+p,
+h2,
+h3 {
   margin: 0 0 5px 0;
 }
 
@@ -47,7 +49,7 @@ p, h2, h3 {
 }
 
 .contactslLink:hover {
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .socialNetwork {
@@ -93,24 +95,24 @@ p, h2, h3 {
   align-self: center;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px; 
+  padding: 10px;
   margin-bottom: 5px;
 }
 
 .repo_info {
   display: flex;
   justify-content: space-between;
-  width: 100%
+  width: 100%;
 }
 
 .repo_link {
   text-decoration: none;
-  color: DarkSlateBlue; 
+  color: DarkSlateBlue;
   margin-bottom: 10px;
 }
 
-.list_item:hover{
-  box-shadow: 4px 4px 8px -5px rgba(104, 111, 106, 0.1);
+.list_item:hover {
+  box-shadow: 4px 4px 8px -5px rgba(104, 111, 106, .1);
   background: #ccc;
 }
 
@@ -127,10 +129,10 @@ p, h2, h3 {
   color: #555;
 }
 
-.html:before,
-.css:before,
-.js:before,
-.no_lang:before  {
+.html::before,
+.css::before,
+.js::before,
+.no_lang::before  {
   content: '';
   position: absolute;
   left: 0;
@@ -140,15 +142,15 @@ p, h2, h3 {
   border-radius: 50%;
 }
 
-.html:before {
-  background: #E34C26;
+.html::before {
+  background: #e34c26;
 }
 
-.css:before {
-  background: #563D7C;
+.css::before {
+  background: #563d7c;
 }
 
-.js:before {
+.js::before {
   background: #ffdc5a;
 }
 
@@ -159,14 +161,14 @@ p, h2, h3 {
 }
 
 .star {
-  margin-left : 5px;
+  margin-left: 5px;
 }
 
-.star:before {
+.star::before {
   content: url('./../Img/Star.svg');
 }
 
-.fork:before {
+.fork::before {
   content: url('./../Img/fork.svg');
 }
 
@@ -203,8 +205,8 @@ p, h2, h3 {
 .button:disabled {
   opacity: .5;
 }
-@media screen and (max-width: 370px) {
 
+@media screen and (max-width: 370px) {
   .info_wrap {
     height: 120px;
     padding: 10px;
@@ -214,7 +216,7 @@ p, h2, h3 {
   .avatar {
     width: 120px;
   }
-  
+
   .userAvatar {
     width: 120px;
   }
@@ -235,7 +237,8 @@ p, h2, h3 {
     font-size: 12px;
   }
 
-  p, h2 {
+  p,
+  h2 {
     margin: 0;
   }
   
@@ -252,12 +255,10 @@ p, h2, h3 {
     border-radius: 5px;
     padding: 5px 10px;
   }
-
 }
 
-@media screen and (min-width:360px) and (max-width: 480px) {
-
-   .info_wrap {
+@media screen and (min-width: 360px) and (max-width: 480px) {
+  .info_wrap {
     padding: 10px;
     margin-bottom: 10px;
   }
@@ -279,5 +280,4 @@ p, h2, h3 {
     border-radius: 5px;
     padding: 5px 10px;
   }
-
 }
