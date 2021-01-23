@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dcd69b9dafa3c8848451182fcd5fbce7",
+    "revision": "7599d775dcfb36fb3754b95b6a77c960",
     "url": "/Olga_ToDo_React/index.html"
   },
   {
-    "revision": "9ecf81340b5f6ba1fb26",
+    "revision": "e54a185893f4af14a9ce",
     "url": "/Olga_ToDo_React/static/css/main.191e7ea1.chunk.css"
   },
   {
-    "revision": "78ba5ef18f494958a976",
-    "url": "/Olga_ToDo_React/static/js/2.14c6c0af.chunk.js"
+    "revision": "d0c85f20b869d430c655",
+    "url": "/Olga_ToDo_React/static/js/2.cf310f5f.chunk.js"
   },
   {
     "revision": "ea400bfb7cfb62de59f10ac82e4a6f9d",
-    "url": "/Olga_ToDo_React/static/js/2.14c6c0af.chunk.js.LICENSE.txt"
+    "url": "/Olga_ToDo_React/static/js/2.cf310f5f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9ecf81340b5f6ba1fb26",
-    "url": "/Olga_ToDo_React/static/js/main.a602da0f.chunk.js"
+    "revision": "e54a185893f4af14a9ce",
+    "url": "/Olga_ToDo_React/static/js/main.a41226db.chunk.js"
   },
   {
     "revision": "901356db01ddf3c2999d",
