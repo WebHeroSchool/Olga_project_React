@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Olga_ToDo_React/static/css/main.191e7ea1.chunk.css",
-    "main.js": "/Olga_ToDo_React/static/js/main.a41226db.chunk.js",
-    "main.js.map": "/Olga_ToDo_React/static/js/main.a41226db.chunk.js.map",
-    "runtime-main.js": "/Olga_ToDo_React/static/js/runtime-main.e867244c.js",
-    "runtime-main.js.map": "/Olga_ToDo_React/static/js/runtime-main.e867244c.js.map",
-    "static/js/2.cf310f5f.chunk.js": "/Olga_ToDo_React/static/js/2.cf310f5f.chunk.js",
-    "static/js/2.cf310f5f.chunk.js.map": "/Olga_ToDo_React/static/js/2.cf310f5f.chunk.js.map",
-    "index.html": "/Olga_ToDo_React/index.html",
-    "precache-manifest.505e4c5d71a405666455ae7f3047568b.js": "/Olga_ToDo_React/precache-manifest.505e4c5d71a405666455ae7f3047568b.js",
-    "service-worker.js": "/Olga_ToDo_React/service-worker.js",
-    "static/css/main.191e7ea1.chunk.css.map": "/Olga_ToDo_React/static/css/main.191e7ea1.chunk.css.map",
-    "static/js/2.cf310f5f.chunk.js.LICENSE.txt": "/Olga_ToDo_React/static/js/2.cf310f5f.chunk.js.LICENSE.txt",
-    "static/media/About.module.css": "/Olga_ToDo_React/static/media/vk.4bf03c4a.svg"
+    "main.css": "/Olga__project__React/static/css/main.cee60355.chunk.css",
+    "main.js": "/Olga__project__React/static/js/main.a41226db.chunk.js",
+    "main.js.map": "/Olga__project__React/static/js/main.a41226db.chunk.js.map",
+    "runtime-main.js": "/Olga__project__React/static/js/runtime-main.91a3b0a3.js",
+    "runtime-main.js.map": "/Olga__project__React/static/js/runtime-main.91a3b0a3.js.map",
+    "static/js/2.cf310f5f.chunk.js": "/Olga__project__React/static/js/2.cf310f5f.chunk.js",
+    "static/js/2.cf310f5f.chunk.js.map": "/Olga__project__React/static/js/2.cf310f5f.chunk.js.map",
+    "index.html": "/Olga__project__React/index.html",
+    "precache-manifest.299107ab2bf4679c2124e83996fc9491.js": "/Olga__project__React/precache-manifest.299107ab2bf4679c2124e83996fc9491.js",
+    "service-worker.js": "/Olga__project__React/service-worker.js",
+    "static/css/main.cee60355.chunk.css.map": "/Olga__project__React/static/css/main.cee60355.chunk.css.map",
+    "static/js/2.cf310f5f.chunk.js.LICENSE.txt": "/Olga__project__React/static/js/2.cf310f5f.chunk.js.LICENSE.txt",
+    "static/media/About.module.css": "/Olga__project__React/static/media/vk.4bf03c4a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e867244c.js",
+    "static/js/runtime-main.91a3b0a3.js",
     "static/js/2.cf310f5f.chunk.js",
-    "static/css/main.191e7ea1.chunk.css",
+    "static/css/main.cee60355.chunk.css",
     "static/js/main.a41226db.chunk.js"
   ]
 }
